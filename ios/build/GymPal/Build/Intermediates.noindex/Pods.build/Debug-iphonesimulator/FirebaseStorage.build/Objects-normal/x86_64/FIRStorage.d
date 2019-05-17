@@ -1,0 +1,28 @@
+dependencies: \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseStorage/Firebase/Storage/FIRStorage.m \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseStorage/Firebase/Storage/Public/FIRStorage.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseStorage/Firebase/Storage/Public/FIRStorageConstants.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseStorage/Firebase/Storage/Private/FIRStorageComponent.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseStorage/Firebase/Storage/Private/FIRStorageConstants_Private.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseStorage/Firebase/Storage/Private/FIRStoragePath.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseStorage/Firebase/Storage/Private/FIRStorageReference_Private.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseStorage/Firebase/Storage/Public/FIRStorageReference.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseStorage/Firebase/Storage/Public/FIRStorageDownloadTask.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseStorage/Firebase/Storage/Public/FIRStorageObservableTask.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseStorage/Firebase/Storage/Public/FIRStorageTask.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseStorage/Firebase/Storage/Public/FIRStorageMetadata.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseStorage/Firebase/Storage/Public/FIRStorageUploadTask.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseStorage/Firebase/Storage/Private/FIRStorageTokenAuthorizer.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/Headers/Private/GTMSessionFetcher/GTMSessionFetcherService.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/Headers/Private/GTMSessionFetcher/GTMSessionFetcher.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseStorage/Firebase/Storage/Private/FIRStorageUtils.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseStorage/Firebase/Storage/Private/FIRStorage_Private.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/Headers/Private/FirebaseAuthInterop/FIRAuthInterop.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/Headers/Private/FirebaseCore/FIRAppInternal.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/Headers/Private/FirebaseCore/FIRApp.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/Headers/Private/FirebaseCore/FIRErrors.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/Headers/Private/FirebaseCore/FIRErrorCode.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/Headers/Private/FirebaseCore/FIRComponentContainer.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/Headers/Private/FirebaseCore/FIRComponentType.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/Headers/Private/FirebaseCore/FIROptions.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/Headers/Private/GTMSessionFetcher/GTMSessionFetcherLogging.h

@@ -1,0 +1,37 @@
+dependencies: \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/AuthProviders/Phone/FIRPhoneAuthProvider.m \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRPhoneAuthProvider.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/Headers/Private/FirebaseCore/FIRLogger.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/Headers/Private/FirebaseCore/FIRLoggerLevel.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/AuthProviders/Phone/FIRPhoneAuthCredential_Internal.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRPhoneAuthCredential.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuthCredential.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/Headers/Private/FirebaseCore/FIRApp.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthAPNSToken.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuthAPNSTokenType.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthAPNSTokenManager.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthAppCredential.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthAppCredentialManager.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthGlobalWorkQueue.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuth_Internal.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuth.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuthErrors.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/Headers/Private/FirebaseAuthInterop/FIRAuthInterop.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthURLPresenter.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthNotificationManager.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthErrorUtils.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRAuthBackend.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuthSettings.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthWebUtils.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FirebaseAuthVersion.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/Headers/Private/FirebaseCore/FIROptions.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRGetProjectConfigRequest.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRIdentityToolkitRequest.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRAuthRequestConfiguration.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRAuthRPCRequest.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRGetProjectConfigResponse.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRAuthRPCResponse.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRSendVerificationCodeRequest.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRSendVerificationCodeResponse.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRVerifyClientRequest.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRVerifyClientResponse.h

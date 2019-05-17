@@ -1,0 +1,19 @@
+dependencies: \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseCore/Firebase/Core/FIRApp.m \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseCore/Firebase/Core/Public/FIRApp.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseCore/Firebase/Core/Public/FIRConfiguration.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseCore/Firebase/Core/Public/FIRAnalyticsConfiguration.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseCore/Firebase/Core/Public/FIRLoggerLevel.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRAnalyticsConfiguration+Internal.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRAppInternal.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRErrors.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRErrorCode.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRBundleUtil.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRComponentContainerInternal.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRComponent.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRComponentContainer.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRComponentType.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRCoreConfigurable.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRLogger.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseCore/Firebase/Core/Private/FIROptionsInternal.h \
+  /Users/JasonChau/Desktop/GymPal/ios/Pods/FirebaseCore/Firebase/Core/Public/FIROptions.h
