@@ -134,8 +134,8 @@ export function authenticate(email, password) {
           })
       })
       .catch(err => {
-        const {cpde, message} = error;
-        alert(message);
+        const {code, message} = err;
+        dispatch(logInFailure(err))
       });
   }
 }

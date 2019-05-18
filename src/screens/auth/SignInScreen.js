@@ -11,30 +11,50 @@ import {
   Modal
 } from 'react-native';
 
-//import { Auth } from 'aws-amplify'
 import firebase from 'react-native-firebase';
 import { connect } from 'react-redux';
 
 import { authenticate, confirmUserLogin } from '../../actions';
-import { fonts, colors } from '../../theme';
+import { AppStyles } from '../../AppStyles';
 
-import Input from '../../components/Input';
+import AuthInput from '../../components/AuthInput';
 import Button from '../../components/Button';
 
 class SignIn extends Component<{}> {
   state = {
-    email: '',
-    password: '',
+    controls: {
+      email: {
+        value: ""
+      },
+      password: {
+        value: ""
+      }
+    }
   };
 
-  onChangeText = (key, value) => {
-    this.setState({
-      [key]: value
+  // onChangeText = (key, value) => {
+  //   this.setState({
+  //     [key]: value
+  //   });
+  // }
+
+  updateInputState = (key, value) => {
+    this.setState(prevState => {
+      return {
+        controls: {
+          ...prevState.controls,
+          [key]: {
+            ...prevState.controls[key],
+            value: value,
+          }
+        }
+      };
     });
   }
 
   signIn() {
-    const { email, password} = this.state;
+    const email = this.state.controls.email.value;
+    const password = this.state.controls.password.value;
     this.props.dispatchAuthenticate(email, password);
   }
 
@@ -47,32 +67,31 @@ class SignIn extends Component<{}> {
     }} = this.props
     return (
       <View style={styles.container}>
-        <View style={styles.heading}>
-          <Image
-            source={require('../../assets/shape.png')}
-            style={styles.headingImage}
-            resizeMode="contain"
-          />
+        <View style={styles.greetingContainer}>
+          <Text style={[styles.greeting]}>
+            Welcome back to GymPal!
+          </Text>
+          <Text style={[styles.greeting2]}>
+            sign in to continue
+          </Text>
         </View>
-        <Text style={[styles.greeting]}>
-          Welcome back,
-        </Text>
-        <Text style={[styles.greeting2]}>
-          sign in to continue
-        </Text>
         <View style={styles.inputContainer}>
-          <Input
+          <AuthInput
             placeholder="Email Address"
             type='email'
-            onChangeText={this.onChangeText}
+            onChangeText={(val) => this.updateInputState("email", val)}
             value={this.state.email}
+            placeholderTextColor={AppStyles.colors.grey}
           />
-          <Input
+        </View>
+        <View style={styles.inputContainer}>
+          <AuthInput
             placeholder="Password"
             type='password'
-            onChangeText={this.onChangeText}
+            onChangeText={(val) => this.updateInputState("password", val)}
             value={this.state.password}
             secureTextEntry
+            placeholderTextColor={AppStyles.colors.grey}
           />
         </View>
 
@@ -99,11 +118,6 @@ const mapStateToProps = state => ({
 export default connect(mapStateToProps, mapDispatchToProps)(SignIn)
 
 const styles = StyleSheet.create({
-  modal: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
   heading: {
     flexDirection: 'row'
   },
@@ -111,29 +125,38 @@ const styles = StyleSheet.create({
     width: 38,
     height: 38
   },
+  inputContainer: {
+    width: AppStyles.textInputWidth.main,
+    marginTop: 30,
+    borderWidth: 1,
+    borderStyle: "solid",
+    borderColor: AppStyles.colors.primary,
+    borderRadius: AppStyles.borderRadius.main
+  },
   errorMessage: {
     fontSize: 12,
     marginTop: 10,
     color: 'transparent',
-    fontFamily: fonts.base
-  },
-  inputContainer: {
-    marginTop: 20
+    fontFamily: AppStyles.fontName.main
   },
   container: {
     flex: 1,
     justifyContent: 'center',
+    alignItems: 'center',
     paddingHorizontal: 40
+  },
+  greetingContainer: {
+    alignItems: 'flex-start'
   },
   greeting: {
     marginTop: 20,
     fontSize: 24,
-    fontFamily: fonts.light
+    fontFamily: AppStyles.fontName.main
   },
   greeting2: {
     color: '#666',
     fontSize: 24,
     marginTop: 5,
-    fontFamily: fonts.light
+    fontFamily: AppStyles.fontName.main
   }
 });

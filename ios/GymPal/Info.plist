@@ -25,7 +25,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
+	<string></string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -65,6 +65,8 @@
 		<string>Lato-Light.ttf</string>
 		<string>Lato-LightItalic.ttf</string>
 		<string>Lato-Regular.ttf</string>
+		<string>Noto Sans.ttf</string>
+		<string>Noto Sans Bold.ttf</string>
 		<string>Raleway-Black.ttf</string>
 		<string>Raleway-BlackItalic.ttf</string>
 		<string>Raleway-Bold.ttf</string>

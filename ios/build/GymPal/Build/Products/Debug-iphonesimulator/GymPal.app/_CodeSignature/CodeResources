@@ -75,7 +75,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		TsEEUzh4hQBgCjds8NLPk2bmpTE=
+		mDnDgZf6dmMDTga+mT5HG8EyX2c=
 		</data>
 		<key>Lato-Black.ttf</key>
 		<data>
@@ -116,6 +116,14 @@
 		<key>Lato-Regular.ttf</key>
 		<data>
 		En8kGHGp/kLNjQc6CDVBDzgk1Xw=
+		</data>
+		<key>Noto Sans Bold.ttf</key>
+		<data>
+		VjvZgsz1sFxiNMQKV1jdovGRYPs=
+		</data>
+		<key>Noto Sans.ttf</key>
+		<data>
+		gwlTxnjmpQaXEIqch9IpzvEwl1o=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -530,6 +538,28 @@
 			<key>hash2</key>
 			<data>
 			eucUtjwsi5QL3SEaDMZ48BFoo07qiqE8DfJTZPKSOKc=
+			</data>
+		</dict>
+		<key>Noto Sans Bold.ttf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			VjvZgsz1sFxiNMQKV1jdovGRYPs=
+			</data>
+			<key>hash2</key>
+			<data>
+			aL3Veh4eYmY6CzcsciQgS4KomCC5zzA5Ezf2HwxecSM=
+			</data>
+		</dict>
+		<key>Noto Sans.ttf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			gwlTxnjmpQaXEIqch9IpzvEwl1o=
+			</data>
+			<key>hash2</key>
+			<data>
+			nptMU70lytnATTcPEzpeMtFm0NVOKprWy6SjH804LVs=
 			</data>
 		</dict>
 		<key>PlugIns/GymPalTests.xctest.dSYM/Contents/Info.plist</key>

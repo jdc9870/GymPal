@@ -14,31 +14,57 @@ import {
 import firebase from 'react-native-firebase';
 import { connect } from 'react-redux';
 
-import { fonts, colors } from '../../theme';
+import { AppStyles } from '../../AppStyles';
 import { createUser, confirmUserSignUp } from '../../actions';
 
-import Input from '../../components/Input';
+import AuthInput from '../../components/AuthInput';
 import Button from '../../components/Button';
 
 const initialState = {
-  fullname: '',
-  password: '',
-  email: '',
-  phone_number: '',
-  //authCode: ''
+  controls: {
+    fullname: {
+      value: ''
+    },
+    password: {
+      value: ''
+    },
+    email: {
+      value: ''
+    },
+    phone_number: {
+      value: ''
+    },
+  }
 };
 
 class SignUp extends Component {
   state = initialState
 
-  onChangeText = (key, value) => {
-    this.setState({
-      [key]: value
-    })
+  // onChangeText = (key, value) => {
+  //   this.setState({
+  //     [key]: value
+  //   })
+  // }
+
+  updateInputState = (key, value) => {
+    this.setState(prevState => {
+      return {
+        controls: {
+          ...prevState.controls,
+          [key]: {
+            ...prevState.controls[key],
+            value: value,
+          }
+        }
+      };
+    });
   }
 
   signUp() {
-    const { fullname, password, email, phone_number } = this.state
+    const fullname = this.state.controls.fullname.value;
+    const password = this.state.controls.password.value;
+    const email = this.state.controls.email.value;
+    const phone_number = this.state.controls.phone_number.value;
     this.props.dispatchCreateUser(fullname, password, email, phone_number)
   }
 
@@ -63,45 +89,46 @@ class SignUp extends Component {
     }} = this.props
     return (
       <View style={styles.container}>
-        <View style={styles.heading}>
-          <Image
-            source={require('../../assets/shape.png')}
-            style={styles.headingImage}
-            resizeMode="contain"
-          />
+        <View style={styles.greetingContainer}>
+          <Text style={styles.greeting}>
+            Welcome,
+          </Text>
+          <Text style={styles.greeting2}>
+            sign up to continue
+          </Text>
         </View>
-        <Text style={styles.greeting}>
-          Welcome,
-        </Text>
-        <Text style={styles.greeting2}>
-          sign up to continue
-        </Text>
         <View style={styles.inputContainer}>
-          <Input
-            value={this.state.username}
+          <AuthInput
+            value={this.state.controls.fullname.value}
             placeholder="Full Name"
             type='fullname'
-            onChangeText={this.onChangeText}
+            onChangeText={(val) => this.updateInputState("fullname", val)}
           />
-          <Input
-            value={this.state.email}
+        </View>
+        <View style={styles.inputContainer}>
+          <AuthInput
+            value={this.state.controls.email.value}
             placeholder="Email"
             type='email'
-            onChangeText={this.onChangeText}
+            onChangeText={(val) => this.updateInputState("email", val)}
           />
-          <Input
-            value={this.state.password}
+        </View>
+        <View style={styles.inputContainer}>
+          <AuthInput
+            value={this.state.controls.password.value}
             placeholder="Password"
             secureTextEntry
             type='password'
-            onChangeText={this.onChangeText}
+            onChangeText={(val) => this.updateInputState("password", val)}
           />
-          <Input
+        </View>
+        <View style={styles.inputContainer}>
+          <AuthInput
             placeholder="Phone Number"
             type='phone_number'
             keyboardType='numeric'
-            onChangeText={this.onChangeText}
-            value={this.state.phone_number}
+            onChangeText={(val) => this.updateInputState("phone_number", val)}
+            value={this.state.controls.phone_number.value}
           />
         </View>
         <Button
@@ -111,27 +138,6 @@ class SignUp extends Component {
         />
         <Text style={[styles.errorMessage, signUpError && { color: 'black' }]}>Error logging in. Please try again.</Text>
         <Text style={[styles.errorMessage, signUpError && { color: 'black' }]}>{signUpErrorMessage}</Text>
-        {
-          showSignUpConfirmationModal && (
-            <Modal>
-              <View style={styles.modal}>
-                <Input
-                  placeholder="Authorization Code"
-                  type='authCode'
-                  keyboardType='numeric'
-                  onChangeText={this.onChangeText}
-                  value={this.state.authCode}
-                  keyboardType='numeric'
-                />
-                <Button
-                  title='Confirm'
-                  onPress={this.confirm.bind(this)}
-                  isLoading={isAuthenticating}
-                />
-              </View>
-            </Modal>
-          )
-        }
       </View>
     );
   }
@@ -150,26 +156,31 @@ const mapDispatchToProps = {
 export default connect(mapStateToProps, mapDispatchToProps)(SignUp)
 
 const styles = StyleSheet.create({
-  modal: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
   inputContainer: {
-    marginTop: 20
+    width: AppStyles.textInputWidth.main,
+    marginTop: 30,
+    borderWidth: 1,
+    borderStyle: "solid",
+    borderColor: AppStyles.colors.primary,
+    borderRadius: AppStyles.borderRadius.main
   },
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
     paddingHorizontal: 40
+  },
+  greetingContainer: {
+    justifyContent: 'center',
+    alignItems: 'flex-start'
   },
   greeting: {
     marginTop: 20,
-    fontFamily: fonts.light,
+    fontFamily: AppStyles.fontName.main,
     fontSize: 24
   },
   greeting2: {
-    fontFamily: fonts.light,
+    fontFamily: AppStyles.fontName.main,
     color: '#666',
     fontSize: 24,
     marginTop: 5
@@ -182,7 +193,7 @@ const styles = StyleSheet.create({
     height: 38
   },
   errorMessage: {
-    fontFamily: fonts.base,
+    fontFamily: AppStyles.fontName.main,
     fontSize: 12,
     marginTop: 10,
     color: 'transparent'

@@ -11,10 +11,9 @@ import {
 
 import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
-//import { Auth } from 'aws-amplify';
 
 import { logOut } from '../actions'
-import { colors, fonts } from '../theme'
+import { AppStyles, AppIcon } from '../AppStyles'
 const { width, height } = Dimensions.get('window')
 
 class Home extends React.Component {
@@ -63,12 +62,7 @@ class Home extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.homeContainer}>
-          <Text style={styles.welcome}>Welcome</Text>
-          <Animated.Image
-            source={require('../assets/boomboxcropped.png')}
-            style={{ tintColor: colors.primary, width: width / 2, height: width / 2, transform: [{scale: this.AnimatedScale}]}}
-            resizeMode='contain'
-          />
+          <Text style={styles.welcome}>Send Nudes Pls</Text>
           <Text onPress={this.logout.bind(this)} style={styles.welcome}>Logout</Text>
         </View>
       </View>
@@ -87,14 +81,14 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   welcome: {
-    fontFamily: fonts.light,
+    fontFamily: AppStyles.fontName.main,
     color: 'rgba(0, 0, 0, .85)',
     marginBottom: 26,
     fontSize: 22,
     textAlign: 'center'
   },
   registration: {
-    fontFamily: fonts.base,
+    fontFamily: AppStyles.fontName.main,
     color: 'rgba(0, 0, 0, .5)',
     marginTop: 20,
     fontSize: 16,
