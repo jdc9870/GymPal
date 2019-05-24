@@ -22,6 +22,7 @@ export const AppStyles = {
     facebook: "#4267b2",
     text: '#696969',
     grey: "grey",
+    disabled: '#a9a9a9',
     white: "white"
   },
   fontSize: {

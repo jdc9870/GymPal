@@ -56,6 +56,7 @@ class EnterNameScreen extends Component {
   }
 
   render() {
+    const isEnabled = this.state.controls.name.value.length > 0;
     return (
       <View style={styles.container}>
         <View style={AppLayout.greetingContainer}>
@@ -71,7 +72,8 @@ class EnterNameScreen extends Component {
         </View>
         <Button
           isLoading={false}
-          title="Next"
+          title="Continue"
+          isEnabled={!isEnabled}
           onPress={this.enterNameHandler}
         />
       </View>

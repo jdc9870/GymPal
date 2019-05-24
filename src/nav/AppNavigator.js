@@ -22,6 +22,7 @@ import ConfirmNumberScreen from '../screens/auth/ConfirmNumberScreen';
 import EnterNameScreen from '../screens/auth/EnterNameScreen';
 import EnterAgeScreen from '../screens/auth/EnterAgeScreen';
 import EnterGenderScreen from '../screens/auth/EnterGenderScreen';
+import EnterPictureScreen from '../screens/auth/EnterPictureScreen'
 
 const AuthStack = createStackNavigator({
     Welcome: {
@@ -44,6 +45,9 @@ const AuthStack = createStackNavigator({
     },
     EnterGender: {
       screen: EnterGenderScreen
+    },
+    EnterPicture: {
+      screen: EnterPictureScreen
     }
   },
   {

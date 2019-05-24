@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>59822627-75AB-44F8-ABDA-D1BED58261D1</key>
+		<key>69B72F76-76A0-462D-9AF4-7BBE0C1E2A90</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>59822627-75AB-44F8-ABDA-D1BED58261D1.xcactivitylog</string>
+			<string>69B72F76-76A0-462D-9AF4-7BBE0C1E2A90.xcactivitylog</string>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
@@ -30,13 +30,13 @@
 			<key>signature</key>
 			<string>Building workspace GymPal with scheme GymPal and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>580352114.39444804</real>
+			<real>580367783.92813301</real>
 			<key>timeStoppedRecording</key>
-			<real>580352118.01585603</real>
+			<real>580367788.96845496</real>
 			<key>title</key>
 			<string>Building workspace GymPal with scheme GymPal and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>59822627-75AB-44F8-ABDA-D1BED58261D1</string>
+			<string>69B72F76-76A0-462D-9AF4-7BBE0C1E2A90</string>
 		</dict>
 	</dict>
 </dict>

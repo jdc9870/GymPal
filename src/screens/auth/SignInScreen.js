@@ -82,6 +82,7 @@ class SignIn extends Component {
       isAuthenticating,
       signInError,
     }} = this.props
+    const isEnabled = this.state.controls.phone_number.value.length > 7;
     return (
       <View style={styles.container}>
         <View style={AppLayout.greetingContainer}>
@@ -111,9 +112,16 @@ class SignIn extends Component {
         </View>
         <Button
           isLoading={isAuthenticating}
-          title='Next'
+          title='Continue'
+          isEnabled={!isEnabled}
           onPress={this.signIn.bind(this)}
         />
+        <Text style={[styles.errorMessage, signInError && { color: 'black' }]}>
+          Error logging in. Please try again.
+        </Text>
+        <Text style={[styles.errorMessage, signInError && { color: 'black' }]}>
+          {signInErrorMessage}
+        </Text>
       </View>
     );
   }

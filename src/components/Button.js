@@ -10,11 +10,14 @@ import {
 
 import { AppStyles } from '../AppStyles';
 
-export default ({ title, onPress, isLoading }) => (
+export default ({ title, onPress, isLoading, isEnabled }) => (
   <TouchableOpacity
     onPress={onPress}
-    underlayColor="rgba(128, 128, 128, 0.1)">
-    <View style={styles.facebookContainer}>
+    disabled={isEnabled}
+    underlayColor="rgba(128, 128, 128, 0.1)"
+    >
+    <View style={[styles.facebookContainer, {backgroundColor: isEnabled
+      ? AppStyles.colors.disabled : AppStyles.colors.primary}]}>
       <Text style={[styles.facebookText]}>{title}</Text>
       {
         isLoading && (

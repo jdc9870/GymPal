@@ -246,8 +246,37 @@ export function onNameDispatched(name) {
   }
 }
 
-export function enterGender() {
+export function onBirthdateDispatched(date) {
+  return (dispatch) => {
+    user_uid = firebase.auth().currentUser._user.uid;
+    const data = {
+      birthdate: date
+    }
+    var db = firebase.firestore().collection("users").doc(user_uid);
+    db.set(data, { merge: true });
+  }
+}
 
+export function onGenderDispatched(gender) {
+  return (dispatch) => {
+    user_uid = firebase.auth().currentUser._user.uid;
+    const data = {
+      gender: gender
+    }
+    var db = firebase.firestore().collection("users").doc(user_uid);
+    db.set(data, { merge: true });
+  }
+}
+
+export function onPictureDispatched(picture) {
+  return (dispatch) => {
+    user_uid = firebase.auth().currentUser._user.uid;
+    const data = {
+      image: picture
+    }
+    var db = firebase.firestore().collection("users").doc(user_uid);
+    db.set(data, { merge: true });
+  }
 }
 
 function confirmLogIn() {

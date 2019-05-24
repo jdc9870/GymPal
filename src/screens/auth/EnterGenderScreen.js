@@ -15,10 +15,9 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
-import { onNameDispatched } from '../../actions';
-import AuthInput from '../../components/AuthInput';
+import Button from 'react-native-button';
+import { onGenderDispatched } from '../../actions';
 import { AppStyles, AppLayout } from '../../AppStyles';
-import Button from '../../components/Button';
 
 class EnterGenderScreen extends Component {
   static navigationOptions = {
@@ -28,27 +27,14 @@ class EnterGenderScreen extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      gender: ''
     }
   }
 
-  updateInputState = (key, value) => {
-    this.setState(prevState => {
-      return {
-        controls: {
-          ...prevState.controls,
-          [key]: {
-            ...prevState.controls[key],
-            value: value,
-          }
-        }
-      };
-    });
+  enterGenderHandler = (gender) => {
+    this.props.dispatchEnterGender(gender)
+    this.props.navigation.navigate('EnterPicture');
   }
-
-  // enterNameHandler = () => {
-  //   this.props.dispatchEnterName(this.state.controls.name.value)
-  //   this.props.navigation.navigate('')
-  // }
 
   render() {
     return (
@@ -56,6 +42,27 @@ class EnterGenderScreen extends Component {
         <View style={AppLayout.greetingContainer}>
           <Text style={AppLayout.greeting}>I identify as</Text>
         </View>
+        <Button
+            containerStyle={styles.buttonContainer}
+            style={styles.buttonText}
+            onPress={() => this.enterGenderHandler("Male")}
+        >
+          Male
+        </Button>
+        <Button
+            containerStyle={styles.buttonContainer}
+            style={styles.buttonText}
+            onPress={() => this.enterGenderHandler("Female")}
+        >
+          Female
+        </Button>
+        <Button
+            containerStyle={styles.buttonContainer}
+            style={styles.buttonText}
+            onPress={() => this.enterGenderHandler("Non-binary")}
+        >
+          Non-binary
+        </Button>
       </View>
     );
   }
@@ -67,36 +74,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: "#fff",
   },
-  facebookContainer: {
-    width: AppStyles.buttonWidth.main,
+  buttonContainer: {
+    width: wp('70%'),
     backgroundColor: AppStyles.colors.primary,
     borderRadius: AppStyles.borderRadius.main,
-    padding: 10,
-    marginTop: 40,
-    height: 42,
-    alignItems: 'center'
+    padding: hp('1%'),
+    marginTop: hp('6%')
   },
-  facebookText: {
-    color: AppStyles.colors.white,
-    fontSize: AppStyles.fontSize.button
-  },
-  inputContainer: {
-    width: AppStyles.textInputWidth.main,
-    marginTop: 30,
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: AppStyles.colors.primary,
-    borderRadius: AppStyles.borderRadius.main
+  buttonText: {
+    color: AppStyles.colors.white
   }
 });
 
-// const mapDispatchToProps = {
-//   dispatchEnterName: (name) => onNameDispatched(name)
-// }
-//
-// const mapStateToProps = state => ({
-//   auth: state.auth
-// })
-//
-// export default connect(mapStateToProps, mapDispatchToProps)(EnterNameScreen)
-export default EnterGenderScreen;
+const mapDispatchToProps = {
+  dispatchEnterGender: (gender) => onGenderDispatched(gender)
+}
+
+const mapStateToProps = state => ({
+  auth: state.auth
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(EnterGenderScreen)
