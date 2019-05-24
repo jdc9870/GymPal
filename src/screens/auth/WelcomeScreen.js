@@ -12,8 +12,10 @@ import {
   heightPercentageToDP as hp
 } from 'react-native-responsive-screen';
 import Button from "react-native-button";
+import FastImage from 'react-native-fast-image';
 import { AppStyles, AppIcon } from '../../AppStyles';
 const { width, height } = Dimensions.get('window');
+import backgroundImage from '../../assets/images/gymBroBg.jpg';
 
 class WelcomeScreen extends React.Component {
   static navigationOptions = {
@@ -26,12 +28,13 @@ class WelcomeScreen extends React.Component {
   }
 
   navigateToSignUp() {
-    this.props.navigation.navigate('Sign Up');
+    this.props.navigation.navigate('SignUp');
   }
 
   navigateToSignIn() {
-    this.props.navigation.navigate('Sign In');
+    this.props.navigation.navigate('SignIn');
   }
+
   animate() {
     Animated.timing(
       this.AnimatedScale,
@@ -54,27 +57,32 @@ class WelcomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.homeContainer}>
-          <Animated.Image
-            source={AppIcon.images.logo}
-            style={{ width: width / 2, height: width / 2, transform: [{scale: this.AnimatedScale}]}}
-            resizeMode='contain'
-          />
-        </View>
-        <Button
-            containerStyle={styles.buttonContainer}
-            style={styles.buttonText}
-            onPress={() => this.props.navigation.navigate("SignIn")}
+        <FastImage
+          source={backgroundImage}
+          style={styles.backgroundImage}
         >
-            Sign In
-        </Button>
-        <Button
-            containerStyle={styles.buttonContainer}
-            style={styles.buttonText}
-            onPress={() => this.props.navigation.navigate("SignUp")}
-        >
-            Sign Up
-        </Button>
+          <View style={styles.homeContainer}>
+            <Animated.Image
+              source={AppIcon.images.logo}
+              style={{ width: width / 2, height: width / 2, marginBottom: hp('10%'), transform: [{scale: this.AnimatedScale}]}}
+              resizeMode='contain'
+            />
+            <Button
+                containerStyle={styles.buttonContainer}
+                style={styles.buttonText}
+                onPress={() => this.props.navigation.navigate("SignIn")}
+            >
+                LOG IN WITH PHONE NUMBER
+            </Button>
+            <Button
+                containerStyle={styles.facebookButtonContainer}
+                style={styles.buttonText}
+                onPress={() => alert("Not implemented yet")}
+            >
+                LOG IN WITH FACEBOOK
+            </Button>
+          </View>
+        </FastImage>
       </View>
     )
   }
@@ -87,12 +95,25 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flex: 1
   },
+  backgroundImage: {
+    width: '100%',
+    height: '100%'
+  },
   homeContainer: {
-    alignItems: 'center'
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   buttonContainer: {
     width: wp('70%'),
     backgroundColor: AppStyles.colors.primary,
+    borderRadius: AppStyles.borderRadius.main,
+    padding: hp('1%'),
+    marginTop: hp('6%')
+  },
+  facebookButtonContainer : {
+    width: wp('70%'),
+    backgroundColor: AppStyles.colors.facebook,
     borderRadius: AppStyles.borderRadius.main,
     padding: hp('1%'),
     marginTop: hp('6%')

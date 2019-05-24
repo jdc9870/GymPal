@@ -1,0 +1,23 @@
+dependencies: \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDImageCache.m \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/WebImage/SDWebImage-Prefix.pch \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/Private/SDInternalMacros.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/Private/SDmetamacros.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDImageCache.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageCompat.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageDefine.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDImageCacheConfig.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDImageCacheDefine.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageOperation.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDMemoryCache.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDDiskCache.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/NSImage+Compatibility.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDImageCodersManager.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDImageCoder.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/NSData+ImageContentType.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDImageTransformer.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIImage+Transform.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDImageCoderHelper.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDImageFrame.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDAnimatedImage.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIImage+MemoryCacheCost.h

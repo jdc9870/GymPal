@@ -3,12 +3,17 @@ export const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS'
 export const LOG_IN_FAILURE = 'LOG_IN_FAILURE'
 export const LOG_OUT = 'LOG_OUT'
 
+export const CODE_SENT = 'CODE_SENT'
+export const CODE_SENT_ERROR = 'CODE_SENT_ERROR'
+export const CODE_DISPATCHED = 'CODE_DISPATCHED'
+export const CODE_CONFIRM_ERROR = 'CODE_CONFIRM_ERROR'
+
 export const SIGN_UP = 'SIGN_UP'
 export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS'
 export const SIGN_UP_FAILURE = 'SIGN_UP_FAILURE'
 
-export const SHOW_SIGN_IN_CONFIRMATION_MODAL = 'SHOW_SIGN_IN_CONFIRMATION_MODAL'
-export const SHOW_SIGN_UP_CONFIRMATION_MODAL = 'SHOW_SIGN_UP_CONFIRMATION_MODAL'
+export const NEW_USER = 'NEW_USER';
+export const NEW_USER_CREATED = 'NEW_USER_CREATED';
 
 export const CONFIRM_SIGNUP = 'CONFIRM_SIGNUP'
 export const CONFIRM_SIGNUP_SUCCESS = 'CONFIRM_SIGNUP_SUCCESS'
@@ -21,6 +26,12 @@ export const CONFIRM_LOGIN_FAILURE = 'CONFIRM_LOGIN_FAILURE'
 const initialState = {
   isAuthenticating: false,
   user: {},
+
+  message: '',
+  loading: false,
+  codeInput: '',
+  confirmResult: null,
+  newUser: false,
 
   signUpError: false,
   signInError: false,
@@ -39,15 +50,28 @@ export default (state = initialState, action) => {
         ...state,
         isAuthenticating: false
       }
+    case NEW_USER:
+      return {
+        ...state,
+        newUser: true,
+        isAuthenticating: false,
+      }
+    case NEW_USER_CREATED:
+      return {
+        ...state,
+        newUser: false,
+      }
     case SIGN_UP:
       return {
         ...state,
         isAuthenticating: true,
+
       }
     case SIGN_UP_SUCCESS:
       return {
         ...state,
-        isAuthenticating: false
+        isAuthenticating: false,
+        user: action.user,
       }
     case SIGN_UP_FAILURE:
       return {
@@ -55,6 +79,32 @@ export default (state = initialState, action) => {
         isAuthenticating: false,
         signUpError: true,
         signUpErrorMessage: action.error.message
+      }
+    case CODE_DISPATCHED:
+      return {
+        ...state,
+        isAuthenticating: true,
+        message: ''
+      }
+    case CODE_SENT:
+      return {
+        ...state,
+        isAuthenticating: false,
+        message: 'Code has been sent!',
+        confirmResult: action.payload
+      }
+    case CODE_SENT_ERROR:
+      return {
+        ...state,
+        isAuthenticating: false,
+        message: action.error.message,
+        confirmResult: null
+      }
+    case CODE_CONFIRM_ERROR:
+      return {
+        ...state,
+        isAuthenticating: false,
+        message: action.error.message
       }
     case LOG_IN:
       return {
@@ -64,6 +114,7 @@ export default (state = initialState, action) => {
       }
     case LOG_IN_SUCCESS:
       return {
+        ...state,
         isAuthenticating: false,
         user: action.user,
       }
@@ -77,7 +128,7 @@ export default (state = initialState, action) => {
     case CONFIRM_LOGIN: {
       return {
         ...state,
-        isAuthenticating: false
+        isAuthenticating: true
       }
     }
     case LOG_OUT:

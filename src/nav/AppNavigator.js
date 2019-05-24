@@ -1,14 +1,114 @@
 import React, { Component }from 'react'
-import { createStackNavigator, createAppContainer} from 'react-navigation';
+import {
+  StyleSheet,
+  Animated,
+  Easing,
+  Platform
+} from 'react-native';
+import {
+  createStackNavigator,
+  createAppContainer,
+  createBottomTabNavigator
+} from 'react-navigation';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import { AppStyles } from '../AppStyles';
+import HomeScreen from '../screens/main/HomeScreen';
+import ChatScreen from '../screens/main/ChatScreen';
+import SettingScreen from '../screens/main/SettingScreen';
+import WelcomeScreen from '../screens/auth/WelcomeScreen';
+import SignInScreen from '../screens/auth/SignInScreen';
+import SignUpScreen from '../screens/auth/SignUpScreen';
+import ConfirmNumberScreen from '../screens/auth/ConfirmNumberScreen';
+import EnterNameScreen from '../screens/auth/EnterNameScreen';
+import EnterAgeScreen from '../screens/auth/EnterAgeScreen';
+import EnterGenderScreen from '../screens/auth/EnterGenderScreen';
 
-import HomeScreen from './HomeScreen'
+const AuthStack = createStackNavigator({
+    Welcome: {
+      screen: WelcomeScreen
+    },
+    SignIn: {
+      screen: SignInScreen
+    },
+    SignUp: {
+      screen: SignUpScreen,
+    },
+    ConfirmNumber: {
+      screen: ConfirmNumberScreen
+    },
+    EnterName: {
+      screen: EnterNameScreen
+    },
+    EnterAge: {
+      screen: EnterAgeScreen
+    },
+    EnterGender: {
+      screen: EnterGenderScreen
+    }
+  },
+  {
+    initialRouteName: 'Welcome',
+    headerMode: "float",
+    mode: "card",
+    navigationOptions: {gesturesEnabled: false},
+    defaultNavigationOptions: ({ navigation }) => ({
+      headerTintColor: AppStyles.colors.primary,
+      headerTitleStyle: styles.headerTitleStyle
+    }),
+  }
+);
 
-const AppNavigator = createStackNavigator({
-  Home: {
-    screen: HomeScreen
+const MainStack = createBottomTabNavigator(
+  {
+    Settings: {
+      screen: SettingScreen
+    },
+    Home: {
+      screen: HomeScreen
+    },
+    Chat: {
+      screen: ChatScreen
+    }
+  },
+  {
+    initialRouteName: "Home",
+    defaultNavigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let IconComponent = Ionicons;
+        let iconName;
+        if (routeName === 'Home') {
+          iconName = 'ios-home';
+          // Sometimes we want to add badges to some icons.
+          // You can check the implementation below.
+        } else if (routeName === 'Settings') {
+          iconName = `ios-settings`;
+        }
+        else if (routeName === 'Chat') {
+          iconName = 'ios-chatbubbles';
+        }
+
+        // You can return any component that you like here!
+        return <IconComponent name={iconName} size={25} color={tintColor} />;
+      },
+    }),
+    tabBarOptions: {
+      activeTintColor: 'tomato',
+      inactiveTintColor: 'gray',
+    },
+  }
+);
+
+export const MainContainer = createAppContainer(MainStack);
+export const AuthContainer = createAppContainer(AuthStack);
+
+const styles = StyleSheet.create({
+  headerTitleStyle: {
+    fontWeight: "bold",
+    textAlign: "center",
+    justifyContent: 'center',
+    color: "black",
+    flex: 1,
+    fontFamily: AppStyles.fontName.main
   }
 });
-
-const AppContainer = createAppContainer(AppNavigator);
-
-export default AppContainer;

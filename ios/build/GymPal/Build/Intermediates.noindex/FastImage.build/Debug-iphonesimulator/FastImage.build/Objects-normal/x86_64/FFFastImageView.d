@@ -1,0 +1,37 @@
+dependencies: \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/FastImage/FFFastImageView.m \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/FastImage/FFFastImageView.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDAnimatedImageView+WebCache.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDAnimatedImageView.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageCompat.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDAnimatedImage.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDImageCoder.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/NSData+ImageContentType.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageManager.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageOperation.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDImageCacheDefine.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageDefine.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDImageLoader.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDImageTransformer.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIImage+Transform.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageCacheKeyFilter.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageCacheSerializer.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageDownloader.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageDownloaderConfig.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageDownloaderRequestModifier.h \
+  /Users/JasonChau/Desktop/GymPal/ios/build/GymPal/Build/Products/Debug-iphonesimulator/include/React/RCTComponent.h \
+  /Users/JasonChau/Desktop/GymPal/ios/build/GymPal/Build/Products/Debug-iphonesimulator/include/React/RCTResizeMode.h \
+  /Users/JasonChau/Desktop/GymPal/ios/build/GymPal/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
+  /Users/JasonChau/Desktop/GymPal/ios/build/GymPal/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
+  /Users/JasonChau/Desktop/GymPal/ios/build/GymPal/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
+  /Users/JasonChau/Desktop/GymPal/ios/build/GymPal/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/JasonChau/Desktop/GymPal/ios/build/GymPal/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/JasonChau/Desktop/GymPal/ios/build/GymPal/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/JasonChau/Desktop/GymPal/ios/build/GymPal/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Users/JasonChau/Desktop/GymPal/ios/build/GymPal/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
+  /Users/JasonChau/Desktop/GymPal/ios/build/GymPal/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
+  /Users/JasonChau/Desktop/GymPal/ios/build/GymPal/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/JasonChau/Desktop/GymPal/ios/build/GymPal/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/JasonChau/Desktop/GymPal/ios/build/GymPal/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/JasonChau/Desktop/GymPal/ios/build/GymPal/Build/Products/Debug-iphonesimulator/include/yoga/YGValue.h \
+  /Users/JasonChau/Desktop/GymPal/node_modules/react-native-fast-image/ios/FastImage/FFFastImageSource.h

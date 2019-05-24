@@ -44,7 +44,17 @@ export const AppStyles = {
     small: 5
   }
 };
-
+export const AppLayout = {
+  greetingContainer: {
+    alignItems: 'flex-start'
+  },
+  greeting: {
+    marginTop: 20,
+    fontSize: hp('4%'),
+    color: AppStyles.colors.primary,
+    fontFamily: AppStyles.fontName.main
+  }
+}
 export const AppIcon = {
   images: {
     logo: require('./assets/gymPalLogo.png')

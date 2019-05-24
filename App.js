@@ -4,19 +4,19 @@ import { StatusBar } from 'react-native';
 import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 
-import Tabs from './src/screens/auth/Tabs';
-import AppContainer from './src/nav/AppNavigator';
+import { AuthContainer, MainContainer } from './src/nav/AppNavigator';
 
 class App extends Component {
   state = {
     user: {},
+    newUser: false,
     isLoading: true
   }
   async componentDidMount() {
     StatusBar.setHidden(true)
     try {
       var user = firebase.auth().currentUser;
-      this.setState({ user, isLoading: false })
+      this.setState({ user, isLoading: false, newUser: user.AdditionalUserInfo.isNewUser })
     } catch (err) {
       this.setState({ isLoading: false })
     }
@@ -35,13 +35,13 @@ class App extends Component {
     if (this.state.user) {
       loggedIn = true
     }
-    if (loggedIn) {
+    if (loggedIn && this.state.newUser) {
       return (
-        <AppContainer/>
+        <MainContainer/>
       )
     }
     return (
-      <Tabs />
+      <AuthContainer />
     )
   }
 }
