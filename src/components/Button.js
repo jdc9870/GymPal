@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
   },
   facebookText: {
     color: AppStyles.colors.white,
+    fontFamily: AppStyles.fontName.main,
     fontSize: AppStyles.fontSize.button
   },
   modalBackground: {

@@ -65,9 +65,9 @@ class ConfirmNumberScreen extends Component {
           codeLength={6}
           autoFocus={true}
           keyboardType="number-pad"
-          activeColor="black"
+          activeColor={AppStyles.colors.primary}
           blurOnSubmit={true}
-          inactiveColor={AppStyles.colors.primary}
+          inactiveColor={AppStyles.colors.text}
           containerProps={this.containerProps}
           onFulfill={this.onFinishCheckingCode}
         />

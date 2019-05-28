@@ -63,6 +63,7 @@
 		47ABBE94229251F500B04A54 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47ABBE85229251F500B04A54 /* MaterialIcons.ttf */; };
 		47ABBE9C22926C1700B04A54 /* libFastImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47ABBE9B22926C0500B04A54 /* libFastImage.a */; };
 		47ABBEE2229359B600B04A54 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47ABBEB4229359A600B04A54 /* libBVLinearGradient.a */; };
+		47ABBF2E2297C85000B04A54 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47ABBF2D2297C83800B04A54 /* libRNImagePicker.a */; };
 		4D986F570CE8405BAD6D3DD4 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72BEFBD35CE849498917F764 /* Raleway-Medium.ttf */; };
 		4EDCF4EBE28A4DA389638211 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F87A629498C4D3790743C13 /* Lato-Light.ttf */; };
 		4FD82D4CCF684D69A314D57A /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA2F0C66A4594397A97C3B8C /* Raleway-Bold.ttf */; };
@@ -388,6 +389,13 @@
 			remoteGlobalIDString = 64AA15081EF7F30100718508;
 			remoteInfo = "BVLinearGradient-tvOS";
 		};
+		47ABBF2C2297C83800B04A54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47ABBF282297C83800B04A54 /* RNImagePicker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 014A3B5C1C6CF33500B6D375;
+			remoteInfo = RNImagePicker;
+		};
 		5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
@@ -478,6 +486,8 @@
 		47ABBE85229251F500B04A54 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
 		47ABBE9522926C0500B04A54 /* FastImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FastImage.xcodeproj; path = "../node_modules/react-native-fast-image/ios/FastImage.xcodeproj"; sourceTree = "<group>"; };
 		47ABBEAE229359A600B04A54 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
+		47ABBF282297C83800B04A54 /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
+		47ABBF302297D60C00B04A54 /* GymPal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = GymPal.entitlements; path = GymPal/GymPal.entitlements; sourceTree = "<group>"; };
 		5DFC086755024BB4ACB1AD08 /* Raleway-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-Thin.ttf"; path = "../src/assets/fonts/Raleway-Thin.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		627844BFEE19410C8E25BE88 /* Raleway-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-MediumItalic.ttf"; path = "../src/assets/fonts/Raleway-MediumItalic.ttf"; sourceTree = "<group>"; };
@@ -526,6 +536,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47ABBF2E2297C85000B04A54 /* libRNImagePicker.a in Frameworks */,
 				47ABBEE2229359B600B04A54 /* libBVLinearGradient.a in Frameworks */,
 				47ABBE9C22926C1700B04A54 /* libFastImage.a in Frameworks */,
 				47ABBE75229251AF00B04A54 /* libRNVectorIcons.a in Frameworks */,
@@ -656,6 +667,7 @@
 		13B07FAE1A68108700A75B9A /* GymPal */ = {
 			isa = PBXGroup;
 			children = (
+				47ABBF302297D60C00B04A54 /* GymPal.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -778,6 +790,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		47ABBF292297C83800B04A54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				47ABBF2D2297C83800B04A54 /* libRNImagePicker.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		4FA176A84CDBE1C5CF80A8C2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -808,6 +828,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				47ABBF282297C83800B04A54 /* RNImagePicker.xcodeproj */,
 				47ABBEAE229359A600B04A54 /* BVLinearGradient.xcodeproj */,
 				47ABBE9522926C0500B04A54 /* FastImage.xcodeproj */,
 				47ABBE6C229251A600B04A54 /* RNVectorIcons.xcodeproj */,
@@ -1006,6 +1027,18 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 3GR8WS667F;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1094,6 +1127,10 @@
 				{
 					ProductGroup = 47ABBDA9228E494900B04A54 /* Products */;
 					ProjectRef = 47ABBDA8228E494900B04A54 /* RNGestureHandler.xcodeproj */;
+				},
+				{
+					ProductGroup = 47ABBF292297C83800B04A54 /* Products */;
+					ProjectRef = 47ABBF282297C83800B04A54 /* RNImagePicker.xcodeproj */;
 				},
 				{
 					ProductGroup = 47ABBE6D229251A600B04A54 /* Products */;
@@ -1389,6 +1426,13 @@
 			fileType = archive.ar;
 			path = libBVLinearGradient.a;
 			remoteRef = 47ABBEB5229359A600B04A54 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		47ABBF2D2297C83800B04A54 /* libRNImagePicker.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNImagePicker.a;
+			remoteRef = 47ABBF2C2297C83800B04A54 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {
@@ -1708,6 +1752,9 @@
 			baseConfigurationReference = C86801042BA20744AF14A4F1 /* Pods-GymPal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GymPal/GymPal.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 3GR8WS667F;
@@ -1722,8 +1769,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jason.GymPal;
 				PRODUCT_NAME = GymPal;
+				PROVISIONING_PROFILE_SPECIFIER = "GymPal Dev Profile";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1733,6 +1781,9 @@
 			baseConfigurationReference = A4BC0E8C8B6856FC11323FB4 /* Pods-GymPal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GymPal/GymPal.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3GR8WS667F;
 				HEADER_SEARCH_PATHS = (
@@ -1746,8 +1797,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jason.GymPal;
 				PRODUCT_NAME = GymPal;
+				PROVISIONING_PROFILE_SPECIFIER = "GymPal Dev Profile";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

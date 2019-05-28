@@ -16,7 +16,7 @@ class App extends Component {
     StatusBar.setHidden(true)
     try {
       var user = firebase.auth().currentUser;
-      this.setState({ user, isLoading: false, newUser: user.AdditionalUserInfo.isNewUser })
+      this.setState({ user, isLoading: false})
     } catch (err) {
       this.setState({ isLoading: false })
     }
@@ -35,7 +35,7 @@ class App extends Component {
     if (this.state.user) {
       loggedIn = true
     }
-    if (loggedIn && this.state.newUser) {
+    if (loggedIn && !this.props.auth.newUser) {
       return (
         <MainContainer/>
       )

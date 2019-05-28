@@ -8,6 +8,8 @@ export const CODE_SENT_ERROR = 'CODE_SENT_ERROR'
 export const CODE_DISPATCHED = 'CODE_DISPATCHED'
 export const CODE_CONFIRM_ERROR = 'CODE_CONFIRM_ERROR'
 
+export const PICTURE_UPLOAD_ERROR = 'PICTURE_UPLOAD_ERROR';
+
 export const SIGN_UP = 'SIGN_UP'
 export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS'
 export const SIGN_UP_FAILURE = 'SIGN_UP_FAILURE'
@@ -32,6 +34,7 @@ const initialState = {
   codeInput: '',
   confirmResult: null,
   newUser: false,
+  progress: 0,
 
   signUpError: false,
   signInError: false,
@@ -60,6 +63,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         newUser: false,
+        isAuthenticating: true,
       }
     case SIGN_UP:
       return {
@@ -134,6 +138,11 @@ export default (state = initialState, action) => {
     case LOG_OUT:
       return {
         ...initialState,
+      }
+    case PICTURE_UPLOAD_ERROR:
+      return {
+        ...state,
+        message: action.error.message
       }
     default:
       return state

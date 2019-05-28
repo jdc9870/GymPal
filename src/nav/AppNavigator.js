@@ -99,6 +99,7 @@ const MainStack = createBottomTabNavigator(
     tabBarOptions: {
       activeTintColor: 'tomato',
       inactiveTintColor: 'gray',
+      showLabel: false
     },
   }
 );

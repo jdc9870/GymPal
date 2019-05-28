@@ -12,9 +12,9 @@ import {
   CODE_DISPATCHED,
   CODE_CONFIRM_ERROR,
   NEW_USER,
-  NEW_USER_CREATED
+  NEW_USER_CREATED,
+  PICTURE_UPLOAD_ERROR,
 } from './reducers/auth'
-
 import { Alert } from 'react-native';
 import firebase from 'react-native-firebase';
 
@@ -204,6 +204,7 @@ export function onCodeDispatched(code) {
       dispatch(logIn())
       getState().auth.confirmResult.confirm(code)
       .then(user => {
+        console.log("yeet")
         user_uid = user._user.uid;
         firebase
           .firestore()
@@ -268,14 +269,49 @@ export function onGenderDispatched(gender) {
   }
 }
 
-export function onPictureDispatched(picture) {
-  return (dispatch) => {
-    user_uid = firebase.auth().currentUser._user.uid;
-    const data = {
-      image: picture
-    }
-    var db = firebase.firestore().collection("users").doc(user_uid);
-    db.set(data, { merge: true });
+function pictureUploadError(err) {
+  return {
+    type: PICTURE_UPLOAD_ERROR,
+    error: err
+  }
+}
+export function onPictureDispatched(imgSource, imgUri) {
+  return (dispatch, getState) => {
+    const user = firebase.auth().currentUser;
+    const ext = imgUri.split('.').pop(); // Extract image extension
+    const filename = `${user._user.uid}.${ext}`; // Generate unique name
+    firebase
+      .storage()
+      .ref(`images/${filename}`)
+      .putFile(imgUri)
+      .on(
+        firebase.storage.TaskEvent.STATE_CHANGED,
+        snapshot => {
+          // let state = {};
+          // state = {
+          //   ...state,
+            getState().auth.progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100 // Calculate progress percentage
+          //};
+          if (snapshot.state === firebase.storage.TaskState.SUCCESS) {
+            // state = {
+            //   ...state,
+            //   uploading: false,
+            //   imgSource: '',
+            //   imgUri: '',
+            //   progress: 0,
+            // };
+            getState().auth.progress = 0;
+          }
+          //this.setState(state);
+        },
+        error => {
+          unsubscribe();
+          alert('Sorry, Try again.');
+        }
+      )
+      dispatch(confirmLogIn());
+      dispatch(newUserCreated());
+      //dispatch(logInSuccess(user));
   }
 }
 

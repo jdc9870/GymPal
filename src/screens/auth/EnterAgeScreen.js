@@ -78,6 +78,13 @@ class EnterAgeScreen extends Component {
                 fontFamily: AppStyles.fontName.main,
                 color: AppStyles.colors.text,
                 fontSize: hp('3%')
+              },
+              btnTextConfirm: {
+                color: AppStyles.colors.primary,
+                fontFamily: AppStyles.fontName.main
+              },
+              btnTextCancel: {
+                fontFamily: AppStyles.fontName.main
               }
             }}
             onDateChange={(date) => {this.setState({date: date})}}
