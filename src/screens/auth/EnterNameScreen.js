@@ -52,7 +52,7 @@ class EnterNameScreen extends Component {
 
   enterNameHandler = () => {
     this.props.dispatchEnterName(this.state.controls.name.value)
-    this.props.navigation.navigate('EnterAge')
+    //this.props.navigation.navigate('EnterAge')
   }
 
   render() {

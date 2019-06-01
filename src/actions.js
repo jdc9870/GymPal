@@ -13,9 +13,19 @@ import {
   CODE_CONFIRM_ERROR,
   NEW_USER,
   NEW_USER_CREATED,
+  INPUT_NAME,
+  INPUT_NAME_SUCCESS,
+  INPUT_BIRTHDAY,
+  INPUT_BIRTHDAY_SUCCESS,
+  INPUT_GENDER,
+  INPUT_GENDER_SUCCESS,
+  INPUT_PREFERENCE,
+  INPUT_PREFERENCE_SUCCESS,
   PICTURE_UPLOAD_ERROR,
+  UPLOAD_PICTURE,
 } from './reducers/auth'
 import { Alert } from 'react-native';
+import NavigationService from './NavigationService'
 import firebase from 'react-native-firebase';
 
 function signUp() {
@@ -30,9 +40,10 @@ function newUser() {
   }
 }
 
-function newUserCreated() {
+function newUserCreated(user) {
   return {
     type: NEW_USER_CREATED,
+    user: user
   }
 }
 
@@ -124,41 +135,6 @@ function logInFailure(err) {
   }
 }
 
-// export function authenticate(email, password) {
-//   return (dispatch) => {
-//     dispatch(logIn())
-//     // Make firebase version
-//     firebase
-//       .auth()
-//       .signInWithEmailAndPassword(email, password)
-//       .then(response => {
-//         user_uid = response.user._user.uid;
-//         firebase
-//           .firestore()
-//           .collection("users")
-//           .doc(user_uid)
-//           .get()
-//           .then(function(user) {
-//             if (user.exists) {
-//               console.log("logInSuccess user is in!")
-//               dispatch(logInSuccess(response.user))
-//               dispatch(confirmLogIn())
-//             } else {
-//               alert("User does not exist! Please try again.")
-//             }
-//           })
-//           .catch(err => {
-//             console.log("error from signIn: ", err)
-//             dispatch(logInFailure(err))
-//           })
-//       })
-//       .catch(err => {
-//         const {code, message} = err;
-//         dispatch(logInFailure(err))
-//       });
-//   }
-// }
-
 // On phone login
 export function authenticate(phone_number) {
   return (dispatch) => {
@@ -214,7 +190,7 @@ export function onCodeDispatched(code) {
           .then(function(user) {
             // Not a first time user
             if (user.exists) {
-              console.log("user exists")
+              console.log("user exists");
               dispatch(logInSuccess(user));
               dispatch(confirmLogIn());
             }
@@ -233,9 +209,22 @@ export function onCodeDispatched(code) {
   }
 }
 
+function inputName() {
+  return {
+    type: INPUT_NAME
+  }
+}
+
+function inputNameSuccess() {
+  return {
+    type: INPUT_NAME_SUCCESS
+  }
+}
+
 export function onNameDispatched(name) {
   return (dispatch) => {
-    user_uid = firebase.auth().currentUser._user.uid;
+    const user = firebase.auth().currentUser;
+    user_uid = user._user.uid;
     const data = {
       firstname: name
     }
@@ -244,6 +233,29 @@ export function onNameDispatched(name) {
       .collection("users")
       .doc(user_uid)
       .set(data)
+      .then(() => {
+        user.updateProfile({
+          displayName: name
+        }).then(() => {
+          console.log("displayName successfully updated")
+        }).catch(error => {
+          console.log(error)
+        })
+      })
+    //dispatch(NavigationActions.navigate({ routeName: 'EnterAge' }));
+    NavigationService.navigate('EnterAge')
+  }
+}
+
+function inputBirthday() {
+  return {
+    type: INPUT_BIRTHDAY
+  }
+}
+
+function inputBirthdaySuccess() {
+  return {
+    type: INPUT_BIRTHDAY_SUCCESS
   }
 }
 
@@ -255,6 +267,20 @@ export function onBirthdateDispatched(date) {
     }
     var db = firebase.firestore().collection("users").doc(user_uid);
     db.set(data, { merge: true });
+    NavigationService.navigate('EnterGender')
+    //dispatch(NavigationActions.navigate({ routeName: 'EnterGender' }));
+  }
+}
+
+function inputGender() {
+  return {
+    type: INPUT_GENDER
+  }
+}
+
+function inputGenderSuccess() {
+  return {
+    type: INPUT_GENDER_SUCCESS
   }
 }
 
@@ -266,6 +292,8 @@ export function onGenderDispatched(gender) {
     }
     var db = firebase.firestore().collection("users").doc(user_uid);
     db.set(data, { merge: true });
+    NavigationService.navigate('EnterPreference')
+    //dispatch(NavigationActions.navigate({ routeName: 'EnterPreference' }));
   }
 }
 
@@ -275,43 +303,83 @@ function pictureUploadError(err) {
     error: err
   }
 }
+
+function uploadingPicture() {
+  return {
+    type: UPLOAD_PICTURE
+  }
+}
 export function onPictureDispatched(imgSource, imgUri) {
   return (dispatch, getState) => {
+    dispatch(uploadingPicture())
     const user = firebase.auth().currentUser;
     const ext = imgUri.split('.').pop(); // Extract image extension
     const filename = `${user._user.uid}.${ext}`; // Generate unique name
+    user.updateProfile({
+      photoURL: filename
+    }).then(function() {
+        console.log("awww yeeet!")
+    }).catch(function(error) {
+        console.log("sad :(")
+        alert(error)
+    });
     firebase
       .storage()
       .ref(`images/${filename}`)
       .putFile(imgUri)
-      .on(
-        firebase.storage.TaskEvent.STATE_CHANGED,
-        snapshot => {
-          // let state = {};
-          // state = {
-          //   ...state,
-            getState().auth.progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100 // Calculate progress percentage
-          //};
-          if (snapshot.state === firebase.storage.TaskState.SUCCESS) {
-            // state = {
-            //   ...state,
-            //   uploading: false,
-            //   imgSource: '',
-            //   imgUri: '',
-            //   progress: 0,
-            // };
-            getState().auth.progress = 0;
-          }
-          //this.setState(state);
-        },
-        error => {
-          unsubscribe();
-          alert('Sorry, Try again.');
-        }
-      )
-      dispatch(confirmLogIn());
-      dispatch(newUserCreated());
-      //dispatch(logInSuccess(user));
+      .then(() => {
+        dispatch(newUserCreated(user));
+      })
+      // .on(
+      //   firebase.storage.TaskEvent.STATE_CHANGED,
+      //   snapshot => {
+      //     // let state = {};
+      //     // state = {
+      //     //   ...state,
+      //       getState().auth.progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100 // Calculate progress percentage
+      //     //};
+      //     if (snapshot.state === firebase.storage.TaskState.SUCCESS) {
+      //       // state = {
+      //       //   ...state,
+      //       //   uploading: false,
+      //       //   imgSource: '',
+      //       //   imgUri: '',
+      //       //   progress: 0,
+      //       // };
+      //       getState().auth.progress = 0;
+      //     }
+      //     //this.setState(state);
+      //   },
+      //   error => {
+      //     unsubscribe();
+      //     alert('Sorry, Try again.');
+      //   }
+      // )
+  }
+}
+
+function inputPreference() {
+  return {
+    type: INPUT_PREFERENCE
+  }
+}
+
+function inputPreferenceSuccess() {
+  return {
+    type: INPUT_PREFERENCE_SUCCESS
+  }
+}
+
+export function onPreferenceDispatched(preferences) {
+  return (dispatch) => {
+    user_uid = firebase.auth().currentUser._user.uid;
+    const data = {
+      preferences: preferences
+    }
+    var db = firebase.firestore().collection("users").doc(user_uid);
+    db.set(data, { merge: true });
+    NavigationService.navigate('EnterPicture')
+    //dispatch(NavigationActions.navigate({ routeName: 'EnterPicture' }));
   }
 }
 

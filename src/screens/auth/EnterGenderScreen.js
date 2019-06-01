@@ -33,7 +33,7 @@ class EnterGenderScreen extends Component {
 
   enterGenderHandler = (gender) => {
     this.props.dispatchEnterGender(gender)
-    this.props.navigation.navigate('EnterPicture');
+    //this.props.navigation.navigate('EnterPreference');
   }
 
   render() {

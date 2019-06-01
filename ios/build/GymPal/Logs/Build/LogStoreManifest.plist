@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>9EB5B745-2B88-44AC-8C9D-BD0A20BBCAFA</key>
+		<key>69330F31-C6E3-4310-B7E6-1AB568868B94</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>9EB5B745-2B88-44AC-8C9D-BD0A20BBCAFA.xcactivitylog</string>
+			<string>69330F31-C6E3-4310-B7E6-1AB568868B94.xcactivitylog</string>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
@@ -30,13 +30,45 @@
 			<key>signature</key>
 			<string>Building workspace GymPal with scheme GymPal and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>580706909.87481904</real>
+			<real>580918728.88254499</real>
 			<key>timeStoppedRecording</key>
-			<real>580706913.08994699</real>
+			<real>580918732.47088897</real>
 			<key>title</key>
 			<string>Building workspace GymPal with scheme GymPal and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>9EB5B745-2B88-44AC-8C9D-BD0A20BBCAFA</string>
+			<string>69330F31-C6E3-4310-B7E6-1AB568868B94</string>
+		</dict>
+		<key>76AA48F4-975F-44CE-A8BF-F7FB53B778EB</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>76AA48F4-975F-44CE-A8BF-F7FB53B778EB.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>GymPal project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>GymPal</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building workspace GymPal with scheme GymPal and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>580914301.63952601</real>
+			<key>timeStoppedRecording</key>
+			<real>580914305.93873405</real>
+			<key>title</key>
+			<string>Building workspace GymPal with scheme GymPal and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>76AA48F4-975F-44CE-A8BF-F7FB53B778EB</string>
 		</dict>
 	</dict>
 </dict>

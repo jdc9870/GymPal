@@ -3,7 +3,7 @@ import { StatusBar } from 'react-native';
 
 import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
-
+import NavigationService from './src/NavigationService';
 import { AuthContainer, MainContainer } from './src/nav/AppNavigator';
 
 class App extends Component {
@@ -37,11 +37,19 @@ class App extends Component {
     }
     if (loggedIn && !this.props.auth.newUser) {
       return (
-        <MainContainer/>
+        <MainContainer
+          ref={navigatorRef => {
+            NavigationService.setTopLevelNavigator(navigatorRef);
+          }}
+        />
       )
     }
     return (
-      <AuthContainer />
+      <AuthContainer
+        ref={navigatorRef => {
+         NavigationService.setTopLevelNavigator(navigatorRef);
+        }}
+      />
     )
   }
 }

@@ -8,7 +8,8 @@ import {
 import {
   createStackNavigator,
   createAppContainer,
-  createBottomTabNavigator
+  createBottomTabNavigator,
+  createSwitchNavigator
 } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { AppStyles } from '../AppStyles';
@@ -22,7 +23,9 @@ import ConfirmNumberScreen from '../screens/auth/ConfirmNumberScreen';
 import EnterNameScreen from '../screens/auth/EnterNameScreen';
 import EnterAgeScreen from '../screens/auth/EnterAgeScreen';
 import EnterGenderScreen from '../screens/auth/EnterGenderScreen';
-import EnterPictureScreen from '../screens/auth/EnterPictureScreen'
+import EnterPictureScreen from '../screens/auth/EnterPictureScreen';
+import EnterPreferenceScreen from '../screens/auth/EnterPreferenceScreen';
+import tempHomeScreen from '../screens/main/tempHome'
 
 const AuthStack = createStackNavigator({
     Welcome: {
@@ -46,6 +49,9 @@ const AuthStack = createStackNavigator({
     EnterGender: {
       screen: EnterGenderScreen
     },
+    EnterPreference: {
+      screen: EnterPreferenceScreen
+    },
     EnterPicture: {
       screen: EnterPictureScreen
     }
@@ -62,13 +68,13 @@ const AuthStack = createStackNavigator({
   }
 );
 
-const MainStack = createBottomTabNavigator(
+const AppStack = createBottomTabNavigator(
   {
     Settings: {
       screen: SettingScreen
     },
     Home: {
-      screen: HomeScreen
+      screen: tempHomeScreen
     },
     Chat: {
       screen: ChatScreen
@@ -104,9 +110,18 @@ const MainStack = createBottomTabNavigator(
   }
 );
 
-export const MainContainer = createAppContainer(MainStack);
+export const MainContainer = createAppContainer(AppStack);
 export const AuthContainer = createAppContainer(AuthStack);
 
+export const AppNavigator = createAppContainer(createSwitchNavigator(
+  {
+      App: AppStack,
+      Auth: AuthStack
+  },
+  {
+    initialRouteName: 'Auth',
+  }
+));
 const styles = StyleSheet.create({
   headerTitleStyle: {
     fontWeight: "bold",

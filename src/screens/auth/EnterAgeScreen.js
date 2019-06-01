@@ -40,7 +40,7 @@ class EnterAgeScreen extends Component {
 
   enterDateHandler = () => {
     this.props.dispatchEnterBirthdate(this.state.date)
-    this.props.navigation.navigate('EnterGender');
+    //this.props.navigation.navigate('EnterGender');
   }
 
   render() {

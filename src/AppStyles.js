@@ -33,6 +33,9 @@ export const AppStyles = {
   buttonWidth: {
     main: wp('70%')
   },
+  buttonHeight: {
+    main: hp('5%')
+  },
   textInputWidth: {
     main: wp('70%')
   },

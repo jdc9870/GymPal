@@ -8,6 +8,19 @@ export const CODE_SENT_ERROR = 'CODE_SENT_ERROR'
 export const CODE_DISPATCHED = 'CODE_DISPATCHED'
 export const CODE_CONFIRM_ERROR = 'CODE_CONFIRM_ERROR'
 
+export const INPUT_NAME = 'INPUT_NAME';
+export const INPUT_NAME_SUCCESS = 'INPUT_NAME_SUCCESS';
+
+export const INPUT_BIRTHDAY = 'INPUT_BIRTHDAY';
+export const INPUT_BIRTHDAY_SUCCESS = 'INPUT_BIRTHDAY_SUCCESS';
+
+export const INPUT_GENDER = 'INPUT_GENDER';
+export const INPUT_GENDER_SUCCESS = 'INPUT_GENDER_SUCCESS';
+
+export const INPUT_PREFERENCE = 'INPUT_PREFERENCE';
+export const INPUT_PREFERENCE_SUCCESS = 'INPUT_PREFERENCE_SUCCESS';
+
+export const UPLOAD_PICTURE = 'UPLOAD_PICTURE';
 export const PICTURE_UPLOAD_ERROR = 'PICTURE_UPLOAD_ERROR';
 
 export const SIGN_UP = 'SIGN_UP'
@@ -63,7 +76,8 @@ export default (state = initialState, action) => {
       return {
         ...state,
         newUser: false,
-        isAuthenticating: true,
+        user: action.user,
+        isAuthenticating: false,
       }
     case SIGN_UP:
       return {
@@ -139,10 +153,55 @@ export default (state = initialState, action) => {
       return {
         ...initialState,
       }
+    case INPUT_NAME:
+      return {
+        ...state,
+        isAuthenticating: true
+      }
+    case INPUT_NAME_SUCCESS:
+      return {
+        ...state,
+        isAuthenticating: false
+      }
+    case INPUT_BIRTHDAY:
+      return {
+        ...state,
+        isAuthenticating: true
+      }
+    case INPUT_BIRTHDAY_SUCCESS:
+      return {
+        ...state,
+        isAuthenticating: false
+      }
+    case INPUT_GENDER:
+      return {
+        ...state,
+        isAuthenticating: true
+      }
+    case INPUT_GENDER_SUCCESS:
+      return {
+        ...state,
+        isAuthenticating: false
+      }
+    case INPUT_PREFERENCE:
+      return {
+        ...state,
+        isAuthenticating: true
+      }
+    case INPUT_PREFERENCE_SUCCESS:
+      return {
+        ...state,
+        isAuthenticating: false
+      }
     case PICTURE_UPLOAD_ERROR:
       return {
         ...state,
         message: action.error.message
+      }
+    case UPLOAD_PICTURE:
+      return {
+        ...state,
+        isAuthenticating: true
       }
     default:
       return state

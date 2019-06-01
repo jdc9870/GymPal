@@ -53,13 +53,18 @@ class EnterPictureScreen extends Component {
         const source = { uri: response.uri };
         this.setState({
           imgSource: source,
-          imgUri: response.urim
+          imgUri: response.uri
         });
       }
     });
   };
 
   render() {
+    const { auth: {
+      signInErrorMessage,
+      isAuthenticating,
+      signInError,
+    }} = this.props
     const isEnabled = this.state.imgSource != null;
     return (
       <View style={styles.container}>
@@ -80,7 +85,7 @@ class EnterPictureScreen extends Component {
           />
         ) : null }
         <Button
-          isLoading={false}
+          isLoading={isAuthenticating}
           title="Done"
           isEnabled={!isEnabled}
           onPress={this.enterPictureHandler}
